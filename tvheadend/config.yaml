@@ -29,7 +29,7 @@ map:
 options:
   system_packages: []
   init_commands: []
-  additional_arguments: []
+  additional_arguments: str
 schema:
-  additional_arguments:
+  satip_xml:
     - str
