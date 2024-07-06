@@ -31,9 +31,5 @@ options:
   init_commands: []
   additional_arguments: []
 schema:
-  system_packages:
-    - str
-  init_commands:
-    - str
   additional_arguments:
     - str
