@@ -26,10 +26,6 @@ ports_description:
   9982/tcp: TVH HTSP
 map:
   - "config:rw"
-options:
-  system_packages: []
-  init_commands: []
-  additional_arguments: str
 schema:
   satip_xml:
     - str
