@@ -8,7 +8,7 @@
 bashio::log.info "Starting TVHeadend..."
 
 if bashio::config.has_value 'satip_xml'; then
-  exec /usr/bin/tvheadend -u root -g root -c /config/tvheadend --satip_xml $(bashio::config 'satip_xml')
+  exec /usr/bin/tvheadend -u root -g root -c /config/tvheadend --satip_xml "$(bashio::config 'satip_xml')"
 else
   exec /usr/bin/tvheadend -u root -g root -c /config/tvheadend
 fi
