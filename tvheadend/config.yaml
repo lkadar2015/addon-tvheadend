@@ -28,4 +28,4 @@ map:
   - "config:rw"
 schema:
   satip_xml:
-    - str
+    - str?
