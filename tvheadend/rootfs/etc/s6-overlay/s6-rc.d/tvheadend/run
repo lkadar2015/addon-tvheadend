@@ -7,4 +7,4 @@
 
 bashio::log.info "Starting TVHeadend..."
 
-exec /usr/bin/tvheadend -u root -g root -c /config/tvheadend
+exec /usr/bin/tvheadend -u root -g root -c /config/tvheadend $(bashio::config 'additional_arguments')

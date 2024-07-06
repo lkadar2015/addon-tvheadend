@@ -1,10 +1,10 @@
 ---
 name: TVHeadend
-version: dev
-stage: experimental
+version: 1.0
+stage: stable
 slug: tvheadend
 description: TV streaming server and recorder.
-url: "https://github.com/GauthamVarmaK/addon-tvheadend"
+url: "https://github.com/mkenfenheuer/addon-tvheadend"
 init: false
 arch:
   - aarch64
@@ -12,7 +12,9 @@ arch:
   - armhf
   - armv7
   - i386
-webui: "http://[HOST]:[PORT:9981]/"
+#webui: "http://[HOST]:[PORT:9981]/"
+ingress: true
+ingress_port: 9981
 devices:
   - /dev/dvb
   - /dev/dri
@@ -27,8 +29,11 @@ map:
 options:
   system_packages: []
   init_commands: []
+  additional_arguments: []
 schema:
   system_packages:
     - str
   init_commands:
+    - str
+  additional_arguments:
     - str
