@@ -1,6 +1,6 @@
 ---
 name: TVHeadend
-version: 2.4.22
+version: 2.4.23
 stage: stable
 slug: tvheadend
 description: TV streaming server and recorder.
