@@ -20,7 +20,7 @@ RUN apt install -y tvheadend ffmpeg
 
 COPY rootfs/ /
 RUN chmod +x /usr/bin/restart_addon
-RUN chmod +x /usr/bin/tvh-postprocess
+RUN chmod +x /usr/bin/tvh_postprocess
 
 # Labels
 LABEL \
