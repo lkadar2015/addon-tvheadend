@@ -21,6 +21,7 @@ devices:
 ports:
   9981/tcp: 9981
   9982/tcp: 9982
+  8022/tcp: 8022
   26000/udp: 26000
   26001/udp: 26001
   26002/udp: 26002
@@ -32,6 +33,7 @@ ports:
 ports_description:
   9981/tcp: TVH Web Interface
   9982/tcp: TVH HTSP
+  8022/tcp: TVH debug ssh
   26000/udp: "TVH SatIP RTP Port #1"
   26001/udp: "TVH SatIP RTCP Port #1"
   26002/udp: "TVH SatIP RTP Port #2"
