@@ -11,5 +11,5 @@ compactbase=$(echo "$basename" | sed "s/...$//") # Remove file ext (3 char)
 tempfile=$(tempfile)
 
 mv $TSVIDEO $tempfile
-/usr/bin/ffmpeg -i "$tempfile" -c:v h264 -c:a mp3 "$TSVIDEO"
+/usr/bin/ffmpeg -i "$tempfile" -c:v copy -filter:v fps=50 -c:a copy "$TSVIDEO"
 rm $tempfile
