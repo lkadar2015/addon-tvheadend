@@ -15,5 +15,6 @@ if bashio::config.has_value 'allowed_ssh_keys'; then
         echo "${arg}" >> /root/.ssh/authorized_keys
     done <<< "$(bashio::config 'allowed_ssh_keys')"
 fi
-
+cd /etc/ssh/
+/usr/bin/ssh-keygen -A
 exec /usr/sbin/sshd -D -e
