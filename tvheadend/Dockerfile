@@ -5,20 +5,22 @@ RUN apt install -y curl
 RUN curl -1sLf 'https://dl.cloudsmith.io/public/tvheadend/tvheadend/setup.deb.sh' | bash
 RUN apt update
 RUN apt install -y tvheadend
-RUN apt install -y git binutils pngquant imagemagick librsvg2-bin jq bsdmainutils
-RUN git clone https://github.com/picons/picons.git /root/picons
+#RUN apt install -y git binutils pngquant imagemagick librsvg2-bin jq bsdmainutils
+#RUN git clone https://github.com/picons/picons.git /root/picons
 
-WORKDIR /root/picons
+#WORKDIR /root/picons
 
-RUN bash ./1-build-servicelist.sh snp
-RUN bash ./1-build-servicelist.sh srp
-RUN bash ./2-build-picons.sh snp-full
-RUN bash ./2-build-picons.sh srp-full
+#RUN bash ./1-build-servicelist.sh snp
+#RUN bash ./1-build-servicelist.sh srp
+#RUN bash ./2-build-picons.sh snp-full
+#RUN bash ./2-build-picons.sh srp-full
 
-RUN cp ./build-output /usr/share/picons
+#RUN cp ./build-output /usr/share/picons
 #RUN rm -r /root/picons
 
 COPY rootfs/ /
+RUN chmod +x /usr/bin/restart_addon
+RUN chmod +x /usr/bin/tvh-postprocess
 
 # Labels
 LABEL \

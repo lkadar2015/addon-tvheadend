@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# variables
+TSVIDEO=$1 #Full path to recording /video/Recordings/%{ShowName}/%{FileName.ext}
+basename=$2 #Basename of recording FileName.ext
+error=$3 #error from tvheadend recorder "OK" if no error
+command=$4 #Type of Post Processing to do comskip or compact
+
+compactbase=$(echo "$basename" | sed "s/...$//") # Remove file ext (3 char)
+
+tempfile=$(tempfile)
+
+mv $TSVIDEO $tempfile
+/usr/bin/ffmpeg -i "$tempfile" -c:v h264 -c:a mp3 "$TSVIDEO"
+rm $tempfile
