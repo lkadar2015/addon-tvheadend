@@ -6,4 +6,14 @@
 # ==============================================================================
 
 bashio::log.info "Starting the SSH daemon..."
-exec /usr/sbin/sshd -D -e -p 8022
+
+mkdir -p /root/.ssh/
+echo "" > /root/.ssh/authorized_keys
+
+if bashio::config.has_value 'allowed_ssh_keys'; then
+    while read -r arg; do
+        echo "${arg}" >> /root/.ssh/authorized_keys
+    done <<< "$(bashio::config 'allowed_ssh_keys')"
+fi
+
+exec /usr/sbin/sshd -D -e

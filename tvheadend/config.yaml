@@ -1,6 +1,6 @@
 ---
 name: TVHeadend
-version: 2.4.21
+version: 2.4.22
 stage: stable
 slug: tvheadend
 description: TV streaming server and recorder.
@@ -47,6 +47,9 @@ map:
   - "media:rw"
 options:
   additional_arguments: []
+  allowed_ssh_keys: []
 schema:
   additional_arguments:
+    - str
+  allowed_ssh_keys:
     - str
