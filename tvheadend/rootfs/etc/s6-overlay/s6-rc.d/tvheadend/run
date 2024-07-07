@@ -14,5 +14,5 @@ if bashio::config.has_value 'additional_arguments'; then
         ARGUMENTS+=("${arg}")
     done <<< "$(bashio::config 'additional_arguments')"
 fi
-
+mkdir -p /media/tvheadend/recordings
 /usr/bin/tvheadend -u root -g root -c /config/tvheadend --firstrun "${ARGUMENTS[@]}"
