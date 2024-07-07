@@ -2,14 +2,9 @@
 
 # variables
 TSVIDEO=$1 
-LOGFILE="/config/log.txt"
 
 tempfile=$(mktemp)
 
-echo "Inputfile: $TSVIDEO" >> $LOGFILE
-
-echo "Moving to tempfile: $TSVIDEO to $tempfile" >> $LOGFILE
-mv $TSVIDEO $tempfile >> $LOGFILE 2>&1
-echo "Converting file: $tempfile" >> $LOGFILE
-/usr/bin/ffmpeg -i "$tempfile" -c:v h264 -c:a mp3 -filter:v fps=50 "$TSVIDEO" >> $LOGFILE 2>&1
-rm $tempfile >> $LOGFILE 2>&1
+echo "Inputfile: $TSVIDEO"
+/usr/bin/ffmpeg -i "$TSVIDEO" -c:v h264 -c:a mp3 -filter:v fps=50 "$tempfile.mp4"
+mv "$tempfile.mp4" "$TSVIDEO"
