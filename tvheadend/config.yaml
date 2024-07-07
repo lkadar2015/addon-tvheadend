@@ -1,6 +1,6 @@
 ---
 name: TVHeadend
-version: 2.4.14
+version: 2.4.15
 stage: stable
 slug: tvheadend
 description: TV streaming server and recorder.
@@ -21,9 +21,25 @@ devices:
 ports:
   9981/tcp: 9981
   9982/tcp: 9982
+  26000/udp: 26000
+  26001/udp: 26001
+  26002/udp: 26002
+  26003/udp: 26003
+  26004/udp: 26004
+  26005/udp: 26005
+  26006/udp: 26006
+  26007/udp: 26007
 ports_description:
   9981/tcp: TVH Web Interface
   9982/tcp: TVH HTSP
+  26000/udp: "TVH SatIP RTP Port #1"
+  26001/udp: "TVH SatIP RTCP Port #1"
+  26002/udp: "TVH SatIP RTP Port #2"
+  26003/udp: "TVH SatIP RTCP Port #2"
+  26004/udp: "TVH SatIP RTP Port #3"
+  26005/udp: "TVH SatIP RTCP Port #3"
+  26006/udp: "TVH SatIP RTP Port #4"
+  26007/udp: "TVH SatIP RTCP Port #4"
 map:
   - "addon_config:rw"
   - "media:rw"
