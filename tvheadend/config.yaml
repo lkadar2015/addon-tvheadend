@@ -1,6 +1,6 @@
 ---
 name: TVHeadend
-version: 2.4.27
+version: 2.4.28
 stage: stable
 slug: tvheadend
 description: TV streaming server and recorder.
@@ -14,7 +14,7 @@ arch:
   - i386
 #webui: "http://[HOST]:[PORT:9981]/"
 ingress: true
-ingress_port: 9981
+ingress_port: 19981
 devices:
   - /dev/dvb
   - /dev/dri
