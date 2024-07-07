@@ -1,6 +1,6 @@
 ---
 name: TVHeadend
-version: 2.4.10
+version: 2.4.11
 stage: stable
 slug: tvheadend
 description: TV streaming server and recorder.
@@ -27,7 +27,7 @@ ports_description:
 map:
   - "config:rw"
 options:
-  satip_xml: ""
+  additional_arguments: []
 schema:
-  satip_xml:
-    - str?
+  additional_arguments:
+    - str

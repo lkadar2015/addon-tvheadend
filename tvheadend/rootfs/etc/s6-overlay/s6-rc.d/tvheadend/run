@@ -7,8 +7,12 @@
 
 bashio::log.info "Starting TVHeadend..."
 
-if bashio::config.has_value 'satip_xml'; then
-  exec /usr/bin/tvheadend -u root -g root -c /config/tvheadend --satip_xml "$(bashio::config 'satip_xml')"
-else
-  exec /usr/bin/tvheadend -u root -g root -c /config/tvheadend
+ARGUMENTS=()
+
+if bashio::config.has_value 'additional_arguments'; then
+    while read -r arg; do
+        ARGUMENTS+=("${arg}")
+    done <<< "$(bashio::config 'additional_arguments')"
 fi
+
+/usr/bin/tvheadend -u root -g root -c /config/tvheadend "${ARGUMENTS[@]}"
