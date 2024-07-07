@@ -26,6 +26,7 @@ ports_description:
   9982/tcp: TVH HTSP
 map:
   - "addon_config:rw"
+  - "media:rw"
 options:
   additional_arguments: []
 schema:
