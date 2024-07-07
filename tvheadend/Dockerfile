@@ -4,7 +4,7 @@ RUN apt update
 RUN apt install -y curl
 RUN curl -1sLf 'https://dl.cloudsmith.io/public/tvheadend/tvheadend/setup.deb.sh' | bash
 RUN apt update
-RUN apt install -y tvheadend
+RUN apt install -y tvheadend ffmpeg
 #RUN apt install -y git binutils pngquant imagemagick librsvg2-bin jq bsdmainutils
 #RUN git clone https://github.com/picons/picons.git /root/picons
 
