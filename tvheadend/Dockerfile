@@ -22,6 +22,9 @@ COPY rootfs/ /
 RUN chmod +x /usr/bin/restart_addon
 RUN chmod +x /usr/bin/tvh_postprocess
 
+RUN mkdir /var/run/sshd
+RUN chmod 0755 /var/run/sshd
+
 # Labels
 LABEL \
     io.hass.name="${BUILD_NAME}" \

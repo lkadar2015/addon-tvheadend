@@ -17,4 +17,4 @@ if bashio::config.has_value 'allowed_ssh_keys'; then
 fi
 cd /etc/ssh/
 /usr/bin/ssh-keygen -A
-exec /usr/sbin/sshd -D -e
+exec /usr/sbin/sshd -D -e < /dev/null
