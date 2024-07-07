@@ -15,4 +15,4 @@ if bashio::config.has_value 'additional_arguments'; then
     done <<< "$(bashio::config 'additional_arguments')"
 fi
 
-/usr/bin/tvheadend -u root -g root -c /config/tvheadend "${ARGUMENTS[@]}"
+/usr/bin/tvheadend -u root -g root -c /config/tvheadend --firstrun "${ARGUMENTS[@]}"
